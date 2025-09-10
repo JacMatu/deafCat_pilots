@@ -3,5 +3,5 @@
 	url = git@gin.g-node.org:/JacMatu/deafCat_pilots-raw.git
 [submodule "outputs/derivatives"]
 	path = outputs/derivatives
-	url = ./outputs/derivatives
+	url = git@gin.g-node.org:/cpp_brewery/deafCat_pilots-derivatives.git
 	datalad-id = bb28b062-b8f4-4e64-9f00-51448625d525
