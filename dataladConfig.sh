@@ -20,7 +20,7 @@ URL_DER_STATS=''
 
 # GIN base name
 # to create siblings automatically for each new repo (i.e.  analysis_visualMotionLoc)
-GIN_BASENAME=''
+GIN_BASENAME='deafCat_pilots'
 
 if [ -z "${URL_RAW}" ]; then
     echo "Error: the URL for the raw cannot be empty"

@@ -5,3 +5,7 @@
 	path = outputs/derivatives
 	url = git@gin.g-node.org:/cpp_brewery/deafCat_pilots-derivatives.git
 	datalad-id = bb28b062-b8f4-4e64-9f00-51448625d525
+[submodule "inputs/raw"]
+	path = inputs/raw
+	url = ./inputs/raw
+	datalad-id = f891d0ac-1e7e-4fa9-8126-4abee86b7a37
