@@ -1,3 +1,3 @@
 [submodule "code/lib/bidspm"]
 	path = code/lib/bidspm
-	url = https://github.com/cpp-lln-lab/bidspm.git
+	url = git@gin.g-node.org:/JacMatu/deafCat_pilots-raw.git
