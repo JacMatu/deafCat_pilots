@@ -1,0 +1,153 @@
+{
+  "Name": "MVPAs",
+  "BIDSModelVersion": "1.0.0",
+  "Description": "test model for deafCAT audio runs",
+  "Input": {
+    "task": [
+      "deafCATaudio"
+    ],
+    "space": [
+      "IXI549Space"
+    ]
+  },
+  "Nodes": [
+    {
+      "Level": "Run",
+      "Name": "MVPA_24betas",
+      "GroupBy": [
+        "run", "subject"
+      ],
+      "Model": {
+          "X": [
+              "stim_file.ANIMAL_BIRD_1.wav",
+              "stim_file.ANIMAL_BIRD_2.wav",
+              "stim_file.ANIMAL_BIRD_3.wav",
+              "stim_file.ANIMAL_OTHER_4.wav",
+              "stim_file.ANIMAL_OTHER_5.wav",
+              "stim_file.ANIMAL_OTHER_6.wav",
+              "stim_file.BIG_ENV_1.wav",
+              "stim_file.BIG_ENV_2.wav",
+              "stim_file.BIG_ENV_3.wav",
+              "stim_file.BIG_MEC_4.wav",
+              "stim_file.BIG_MEC_5.wav",
+              "stim_file.BIG_MEC_6.wav",
+              "stim_file.HUMAN_NONVOC_1.wav",
+              "stim_file.HUMAN_NONVOC_2.wav",
+              "stim_file.HUMAN_NONVOC_3.wav",
+              "stim_file.HUMAN_VOC_4.wav",
+              "stim_file.HUMAN_VOC_5.wav",
+              "stim_file.HUMAN_VOC_6.wav",
+              "stim_file.MANIP_ACTWITH_1.wav",
+              "stim_file.MANIP_ACTWITH_2.wav",
+              "stim_file.MANIP_ACTWITH_3.wav",
+              "stim_file.MANIP_GRASPON_4.wav",
+              "stim_file.MANIP_GRASPON_5.wav",
+              "stim_file.MANIP_GRASPON_6.wav",
+              "name.NULL",
+              "name.T_CONG_LL",
+              "name.T_CONG_NLNL",
+              "name.T_INCONG_LNL",
+              "name.T_INCONG_NLL",
+              "trans_?",
+              "rot_?",
+              "*outlier*"
+          ],
+          "HRF": {
+              "Variables": [
+               "stim_file.ANIMAL_BIRD_1.wav",
+              "stim_file.ANIMAL_BIRD_2.wav",
+              "stim_file.ANIMAL_BIRD_3.wav",
+              "stim_file.ANIMAL_OTHER_4.wav",
+              "stim_file.ANIMAL_OTHER_5.wav",
+              "stim_file.ANIMAL_OTHER_6.wav",
+              "stim_file.BIG_ENV_1.wav",
+              "stim_file.BIG_ENV_2.wav",
+              "stim_file.BIG_ENV_3.wav",
+              "stim_file.BIG_MEC_4.wav",
+              "stim_file.BIG_MEC_5.wav",
+              "stim_file.BIG_MEC_6.wav",
+              "stim_file.HUMAN_NONVOC_1.wav",
+              "stim_file.HUMAN_NONVOC_2.wav",
+              "stim_file.HUMAN_NONVOC_3.wav",
+              "stim_file.HUMAN_VOC_4.wav",
+              "stim_file.HUMAN_VOC_5.wav",
+              "stim_file.HUMAN_VOC_6.wav",
+              "stim_file.MANIP_ACTWITH_1.wav",
+              "stim_file.MANIP_ACTWITH_2.wav",
+              "stim_file.MANIP_ACTWITH_3.wav",
+              "stim_file.MANIP_GRASPON_4.wav",
+              "stim_file.MANIP_GRASPON_5.wav",
+              "stim_file.MANIP_GRASPON_6.wav",
+              "name.NULL",
+              "name.T_CONG_LL",
+              "name.T_CONG_NLNL",
+              "name.T_INCONG_LNL",
+              "name.T_INCONG_NLL"
+              ],
+              "Model": "spm"
+          },
+          "Type": "glm",
+          "Options": {
+              "HighPassFilterCutoffHz": 0.0078,
+              "Mask": ""
+          },
+          "Software": {
+              "SPM": {
+                  "SerialCorrelation": "FAST"
+              }
+          }
+      },
+      "DummyContrasts": {
+          "Test": "t",
+          "Contrasts": [
+              "stim_file.ANIMAL_BIRD_1.wav",
+              "stim_file.ANIMAL_BIRD_2.wav",
+              "stim_file.ANIMAL_BIRD_3.wav",
+              "stim_file.ANIMAL_OTHER_4.wav",
+              "stim_file.ANIMAL_OTHER_5.wav",
+              "stim_file.ANIMAL_OTHER_6.wav",
+              "stim_file.BIG_ENV_1.wav",
+              "stim_file.BIG_ENV_2.wav",
+              "stim_file.BIG_ENV_3.wav",
+              "stim_file.BIG_MEC_4.wav",
+              "stim_file.BIG_MEC_5.wav",
+              "stim_file.BIG_MEC_6.wav",
+              "stim_file.HUMAN_NONVOC_1.wav",
+              "stim_file.HUMAN_NONVOC_2.wav",
+              "stim_file.HUMAN_NONVOC_3.wav",
+              "stim_file.HUMAN_VOC_4.wav",
+              "stim_file.HUMAN_VOC_5.wav",
+              "stim_file.HUMAN_VOC_6.wav",
+              "stim_file.MANIP_ACTWITH_1.wav",
+              "stim_file.MANIP_ACTWITH_2.wav",
+              "stim_file.MANIP_ACTWITH_3.wav",
+              "stim_file.MANIP_GRASPON_4.wav",
+              "stim_file.MANIP_GRASPON_5.wav",
+              "stim_file.MANIP_GRASPON_6.wav"
+            ]   
+      },
+"Contrasts": [
+       
+        ]
+  },
+  {
+    "Level": "Subject",
+    "Name": "subject_level",
+    "GroupBy": [
+      "contrast",
+      "subject"
+    ],
+    "Model": {
+      "X": [
+        1
+      ],
+      "Type": "glm"
+    },
+    "DummyContrasts": {
+      "Test": "t"
+    }, 
+    "Contrasts": []
+  }
+
+  ]
+  }

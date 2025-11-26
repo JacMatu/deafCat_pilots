@@ -1,0 +1,190 @@
+{
+  "Name": "UNIV_test",
+  "BIDSModelVersion": "1.0.0",
+  "Description": "test model for deafCAT visual runs",
+  "Input": {
+    "task": [
+      "deafCATaudio"
+    ],
+    "space": [
+      "IXI549Space"
+    ]
+  },
+  "Nodes": [
+    {
+      "Level": "Run",
+      "Name": "univ_summary",
+      "GroupBy": [
+        "run", "subject"
+      ],
+      "Model": {
+          "X": [
+              "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.BIG_ENV",
+              "name.BIG_MEC",
+              "name.HUMAN_NONVOC",
+              "name.HUMAN_VOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON",
+              "name.NULL",
+              "name.T_CONG_LL",
+              "name.T_CONG_NLNL",
+              "name.T_INCONG_LNL",
+              "name.T_INCONG_NLL",
+              "trans_?",
+              "rot_?",
+              "*outlier*"
+          ],
+          "HRF": {
+              "Variables": [
+              "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.BIG_ENV",
+              "name.BIG_MEC",
+              "name.HUMAN_NONVOC",
+              "name.HUMAN_VOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON",
+              "name.NULL",
+              "name.T_CONG_LL",
+              "name.T_CONG_NLNL",
+              "name.T_INCONG_LNL",
+              "name.T_INCONG_NLL"
+              ],
+              "Model": "spm"
+          },
+          "Type": "glm",
+          "Options": {
+              "HighPassFilterCutoffHz": 0.0078,
+              "Mask": ""
+          },
+          "Software": {
+              "SPM": {
+                  "SerialCorrelation": "FAST"
+              }
+          }
+      },
+"DummyContrasts": {
+      "Test": "t"
+    },
+"Contrasts": [
+  {
+          "Name": "ANIMAL_gt_rest",
+          "ConditionList": [
+              "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.BIG_ENV",
+              "name.BIG_MEC",
+              "name.HUMAN_NONVOC",
+              "name.HUMAN_VOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON"
+          ],
+          "Weights": [
+             1.5,
+            1.5,
+             -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5
+          ],
+          "Test": "t"
+        },    
+  {
+          "Name": "BIG_gt_rest",
+          "ConditionList": [
+              "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.BIG_ENV",
+              "name.BIG_MEC",
+              "name.HUMAN_NONVOC",
+              "name.HUMAN_VOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON"
+          ],
+          "Weights": [ -0.5, -0.5, 1.5, 1.5, -0.5, -0.5, -0.5, -0.5],
+          "Test": "t"
+        },
+         
+      {
+          "Name": "HUMAN_gt_rest",
+          "ConditionList": [
+             "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.BIG_ENV",
+              "name.BIG_MEC",
+              "name.HUMAN_NONVOC",
+              "name.HUMAN_VOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON"
+          ],
+          "Weights": [
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            1.5,
+            1.5,
+            -0.5,
+            -0.5
+          ],
+          "Test": "t"
+        },
+            {
+          "Name": "MANIP_gt_rest",
+          "ConditionList": [
+              "name.BIG_MEC",
+              "name.BIG_ENV",
+              "name.ANIMAL_BIRD",
+              "name.ANIMAL_OTHER",
+              "name.HUMAN_VOC",
+              "name.HUMAN_NONVOC",
+              "name.MANIP_ACTWITH",
+              "name.MANIP_GRASPON"
+          ],
+          "Weights": [
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            -0.5,
+            1.5,
+            1.5
+            
+          ],
+          "Test": "t"
+        }
+          ]
+  },
+  {
+    "Level": "Subject",
+    "Name": "subject_level",
+    "GroupBy": [
+      "subject",
+      "contrast"
+    ],
+    "Model": {
+      "X": [
+        1
+      ],
+      "Type": "glm"
+    },
+    "DummyContrasts": {
+      "Test": "t"
+    }, 
+    "Contrasts": [
+        {
+          "Name": "BIG_gt_rest",
+          "ConditionList": ["BIG_gt_rest"],
+          "Weights": [1],
+          "Test": "t"
+        }
+      ]
+  }
+
+  ]
+  }
